@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
-import './App.css';
 import { Container, Grid, Item, Image } from 'semantic-ui-react';
-import SiteHeader from './components/SiteHeader';
 import ResponsiveEmbed from 'react-responsive-embed';
 import _ from 'lodash';
+
+import './App.css';
+
+import SiteHeader from './components/SiteHeader';
+
+
 
 
 class App extends Component {
@@ -11,29 +15,25 @@ class App extends Component {
     return (
       <div>
         <SiteHeader />
-        <Container>
+        <Container className="main-container">
           <Grid>
             <Grid.Column width={11}>
               <ResponsiveEmbed src='https://www.youtube.com/embed/2yqz9zgoC-U' allowFullScreen />
             </Grid.Column>
             <Grid.Column width={5}>
-            <Item.Group>
-              {
-                _.times(10, () => (
-                  <Item>
-                    <Item.Image src='https://via.placeholder.com/168x94.png' />
-                    <Item.Content>
-                      <Item.Header as='a'>Header</Item.Header>
-                      <Item.Meta>Description</Item.Meta>
-                      <Item.Description>
-                        <Image src='/images/wireframe/short-paragraph.png' />
-                      </Item.Description>
-                      <Item.Extra>Additional Details</Item.Extra>
-                    </Item.Content>
-                  </Item>
-                ))
-              }
-            </Item.Group>
+              <Item.Group>
+                {
+                  _.times(10, () => (
+                    <Item>
+                      <Item.Image src='https://via.placeholder.com/168x94.png' />
+                      <Item.Content>
+                        <Item.Header as='a'>Video Title</Item.Header>
+                        <Item.Meta>Video Channel</Item.Meta>
+                      </Item.Content>
+                    </Item>
+                  ))
+                }
+              </Item.Group>
             </Grid.Column>
           </Grid>
         </Container>
