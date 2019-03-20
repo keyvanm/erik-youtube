@@ -4,6 +4,9 @@ import _ from 'lodash';
 import './App.css';
 import SiteHeader from './components/SiteHeader';
 import VideoPage from './components/VideoPage';
+import { Switch, Route } from 'react-router';
+
+
 
 class App extends Component {
   render() {
@@ -11,7 +14,10 @@ class App extends Component {
       <div>
         <SiteHeader />
         <Container className="main-container">
-          <VideoPage />
+          <Switch>
+            <Route path="/video/:videoId" component={VideoPage} />
+            <Route exact path="/" component={Container} />
+          </Switch>
         </Container>
       </div>
     );
